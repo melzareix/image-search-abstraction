@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const searchItemSchema = mongoose.Schema({
     term: String,
     date: {

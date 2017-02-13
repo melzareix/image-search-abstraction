@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const imagesClient = require('google-images');
+const moment = require('moment');
 
 const router = express.Router();
 
@@ -8,7 +9,34 @@ const cseId = '012754357838355856632:q_6qifbv5au';
 const apiKey = 'AIzaSyA9SSLNYAqpSad5kz19alsATTFAzM2t-oA';
 
 const searchClient = new imagesClient(cseId, apiKey);
-const searchItem = require('../models/searchItem');
+const SearchItem = require('../models/searchItem');
+
+
+
+
+/*
+    Search History API Route
+*/
+
+router.get('/recent', function (req, res, next) {
+    SearchItem.find({}, '-_id term date')
+        .limit(10)
+        .exec(function (err, items) {
+            if (err) {
+                return next(err);
+            }
+            
+            // Return human date readable format
+            const searchItems = [];
+            items.forEach(function (item) {
+                searchItems.push({
+                    term: item.term,
+                    date: moment(item.date).calendar()
+                })
+            });
+            return res.json(searchItems);
+        });
+});
 
 /*
     Search API Route
@@ -30,7 +58,7 @@ router.get('/search/:searchtext', function (req, res, next) {
         })
         .then(function (images) {
             // Add Item to search history on success
-            new searchItem({
+            new SearchItem({
                 term: searchtext
             }).save(function (err, item) {
                 if (err) {
@@ -42,6 +70,7 @@ router.get('/search/:searchtext', function (req, res, next) {
             next(err);
         });
 });
+
 
 /*
     Error handling middleware
