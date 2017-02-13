@@ -8,6 +8,10 @@ const apiKey = 'AIzaSyA9SSLNYAqpSad5kz19alsATTFAzM2t-oA';
 
 const searchClient = new imagesClient(cseId, apiKey);
 
+/*
+    Search API Route
+*/
+
 router.get('/search/:searchtext', function (req, res, next) {
     const searchtext = req.params.searchtext;
     var offset = req.query.offset;
@@ -29,9 +33,18 @@ router.get('/search/:searchtext', function (req, res, next) {
         });
 });
 
+/*
+    Error handling middleware
+*/
+
+router.use(function (req, res) {
+    res.status(404).json({
+        status: 'Invalid path.'
+    });
+});
 
 router.use(function (err, req, res, next) {
-    res.json({
+    res.status(400).json({
         status: err.toString()
     });
 });
