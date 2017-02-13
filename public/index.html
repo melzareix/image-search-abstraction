@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello!</title>
-<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search Abstraction</title>
+    <link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
-<body><div class="container"><h1 id="image-abstraction-microservice">Image Abstraction Microservice</h1>
 
-
-
-<h3 id="user-stories">User stories:</h3>
-
-
-
-<pre class="prettyprint"><code class=" hljs livecodeserver"><span class="hljs-number">1</span>) User Story : I can <span class="hljs-built_in">get</span> <span class="hljs-operator">the</span> image URLs, width, height, size <span class="hljs-operator">and</span> thumbnails 
+<body>
+    <div class="container">
+        <h1 id="image-abstraction-microservice">Image Abstraction Microservice</h1>
+        <h3 id="user-stories">User stories:</h3>ix
+        <pre class="prettyprint"><code class=" hljs livecodeserver"><span class="hljs-number">1</span>) User Story : I can <span class="hljs-built_in">get</span> <span class="hljs-operator">the</span> image URLs, width, height, size <span class="hljs-operator">and</span> thumbnails 
    <span class="hljs-keyword">for</span> <span class="hljs-operator">a</span> <span class="hljs-built_in">set</span> <span class="hljs-operator">of</span> images relating <span class="hljs-built_in">to</span> <span class="hljs-operator">a</span> given search <span class="hljs-keyword">string</span>.
 <span class="hljs-number">2</span>) User Story : I can paginate through <span class="hljs-operator">the</span> responses <span class="hljs-keyword">by</span> adding <span class="hljs-operator">a</span> ?<span class="hljs-built_in">offset</span>=x parameter <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> <span class="hljs-built_in">URL</span>.
 <span class="hljs-number">3</span>) User Story : I can <span class="hljs-built_in">get</span> <span class="hljs-operator">a</span> list <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> most recently submitted search strings.</code></pre>
-
-
-
-<h3 id="example-usage">Example usage:</h3>
-
-
-
-<pre class="prettyprint"><code class=" hljs avrasm"><span class="hljs-label">https:</span>//image-search-abstraction<span class="hljs-preprocessor">.herokuapp</span><span class="hljs-preprocessor">.com</span>/api/v1/search/cats
+        <h3 id="example-usage">Example usage:</h3>
+        <pre class="prettyprint"><code class=" hljs avrasm"><span class="hljs-label">https:</span>//image-search-abstraction<span class="hljs-preprocessor">.herokuapp</span><span class="hljs-preprocessor">.com</span>/api/v1/search/cats
 <span class="hljs-label">https:</span>//image-search-abstraction<span class="hljs-preprocessor">.herokuapp</span><span class="hljs-preprocessor">.com</span>/api/v1/search/dogs?offset=<span class="hljs-number">10</span>
-<span class="hljs-label">https:</span>//image-search-abstraction<span class="hljs-preprocessor">.herokuapp</span><span class="hljs-preprocessor">.com</span>/api/v1/recent/</code></pre></div></body>
+<span class="hljs-label">https:</span>//image-search-abstraction<span class="hljs-preprocessor">.herokuapp</span><span class="hljs-preprocessor">.com</span>/api/v1/recent/</code></pre>
+    </div>
+</body>
+
 </html>
