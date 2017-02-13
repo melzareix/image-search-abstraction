@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const imagesClient = require('google-images');
+
 const router = express.Router();
 
 const cseId = '012754357838355856632:q_6qifbv5au';
 const apiKey = 'AIzaSyA9SSLNYAqpSad5kz19alsATTFAzM2t-oA';
 
 const searchClient = new imagesClient(cseId, apiKey);
+const searchItem = require('../models/searchItem');
 
 /*
     Search API Route
@@ -27,7 +29,15 @@ router.get('/search/:searchtext', function (req, res, next) {
             page: page
         })
         .then(function (images) {
-            res.json(images);
+            // Add Item to search history on success
+            new searchItem({
+                term: searchtext
+            }).save(function (err, item) {
+                if (err) {
+                    return next(err);
+                }
+                res.json(images);
+            });
         }).catch(function (err) {
             next(err);
         });
