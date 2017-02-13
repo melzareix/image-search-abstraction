@@ -12,8 +12,6 @@ const searchClient = new imagesClient(cseId, apiKey);
 const SearchItem = require('../models/searchItem');
 
 
-
-
 /*
     Search History API Route
 */
@@ -87,4 +85,5 @@ router.use(function (err, req, res, next) {
         status: err.toString()
     });
 });
+
 module.exports = router;
