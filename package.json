@@ -19,6 +19,7 @@
   "homepage": "https://github.com/melzareix/image-search-abstraction#readme",
   "dependencies": {
     "express": "^4.14.1",
+    "google-images": "^2.0.0",
     "mongoose": "^4.8.2",
     "morgan": "^1.8.1"
   }
