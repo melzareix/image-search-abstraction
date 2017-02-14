@@ -11,9 +11,9 @@
 ### Example usage:
 
 ```
-https://image-search-abstraction.herokuapp.com/api/v1/search/cats
-https://image-search-abstraction.herokuapp.com/api/v1/search/dogs?offset=10
-https://image-search-abstraction.herokuapp.com/api/v1/recent/
+https://image-search-abstractionz.herokuapp.com/api/v1/search/cats
+https://image-search-abstractionz.herokuapp.com/api/v1/search/dogs?offset=10
+https://image-search-abstractionz.herokuapp.com/api/v1/recent/
 ```
 
 
